@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🛡️ NSLY VAULT — Gestor de Contraseñas TUI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- HEADER FLOTANTE -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <h1>🛡️ NSLY VAULT</h1>
+                <p>Password Manager TUI • GPL v2 • Open Source</p>
+            </div>
+            <nav class="nav-buttons">
+                <a href="https://github.com/Qmaker-programmer/Nsly" target="_blank" class="btn btn-github">
+                    <span>📦 GitHub</span>
+                </a>
+                <a href="https://github.com/Qmaker-programmer/Nsly/releases" target="_blank" class="btn btn-download">
+                    <span>⬇️ Descargar</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">🔐 Tu Gestor de Contraseñas</h1>
+            <p class="hero-subtitle">Minimalista. Seguro. Que vive en tu terminal.</p>
+            <div class="hero-buttons">
+                <a href="https://github.com/Qmaker-programmer/Nsly" class="cta-button">Ver en GitHub</a>
+                <a href="https://github.com/Qmaker-programmer/Nsly/releases" class="cta-button secondary">Descargar Ahora</a>
+            </div>
+        </div>
+        <div class="hero-bg"></div>
+    </section>
+
+    <!-- SCROLLING SECTIONS CON PARALLAX -->
+    <main class="scroll-container">
+        
+        <!-- SECCIÓN 1: ¿QUÉ ES? -->
+        <section class="scroll-section" data-index="1">
+            <div class="scroll-text left">
+                <h2>¿Qué es NSLY VAULT?</h2>
+                <p>Un gestor de contraseñas TUI (Terminal User Interface) que corre directamente en tu terminal. Sin navegador, sin interfaz gráfica bloatware. Solo eficiencia pura y seguridad militar.</p>
+            </div>
+            <div class="scroll-image right">
+                <div class="code-block">
+                    <pre><code>$ go run src/main.go
+🛡️ NSLY VAULT — ÁREA RESTRINGIDA
+
+Contraseña maestra:
+●●●●●●●●
+
+enter entrar • esc salir</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: SEGURIDAD -->
+        <section class="scroll-section" data-index="2">
+            <div class="scroll-image left">
+                <div class="security-card">
+                    <div class="security-layer">
+                        <h3>🔐 bcrypt cost=14</h3>
+                        <p>Verificación de contraseña maestra</p>
+                    </div>
+                    <div class="security-layer">
+                        <h3>🔒 AES-256-GCM</h3>
+                        <p>Cifrado de tus contraseñas</p>
+                    </div>
+                    <div class="security-layer">
+                        <h3>🛡️ scrypt (N=32768)</h3>
+                        <p>Derivación de clave anti-brute-force</p>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-text right">
+                <h2>Seguridad de Nivel Militar</h2>
+                <p>Tu bóveda está protegida por las tecnologías criptográficas más avanzadas. Cada contraseña se cifra con AES-256-GCM. La contraseña maestra se verifica con bcrypt cost=14 (tarda ~1 segundo intencionalmente).</p>
+                <p><strong>Incluso si alguien hackea tu servidor, solo obtiene basura cifrada. 🎯</strong></p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: CARACTERÍSTICAS -->
+        <section class="scroll-section" data-index="3">
+            <div class="scroll-text left">
+                <h2>Características Increíbles</h2>
+                <ul class="features-list">
+                    <li>✓ Generador de contraseñas seguras</li>
+                    <li>✓ Búsqueda en tiempo real</li>
+                    <li>✓ TOTP / 2FA</li>
+                    <li>✓ Sincronización en la nube (cifrada)</li>
+                    <li>✓ Importar de Bitwarden, KeePass</li>
+                    <li>✓ Exportar/Importar</li>
+                    <li>✓ CLI puro • Sin dependencias bloat</li>
+                </ul>
+            </div>
+            <div class="scroll-image right">
+                <div class="features-visual">
+                    <div class="feature-box">🎲 Generador</div>
+                    <div class="feature-box">🔍 Búsqueda</div>
+                    <div class="feature-box">🔑 2FA</div>
+                    <div class="feature-box">☁️ Sync</div>
+                    <div class="feature-box">📤 Exportar</div>
+                    <div class="feature-box">📥 Importar</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: ATAJOS DE TECLADO -->
+        <section class="scroll-section" data-index="4">
+            <div class="scroll-image left">
+                <div class="keyboard-shortcuts">
+                    <div class="shortcut">
+                        <kbd>↑/↓</kbd> <span>Navegar</span>
+                    </div>
+                    <div class="shortcut">
+                        <kbd>Enter</kbd> <span>Seleccionar</span>
+                    </div>
+                    <div class="shortcut">
+                        <kbd>C</kbd> <span>Copiar</span>
+                    </div>
+                    <div class="shortcut">
+                        <kbd>D</kbd> <span>Eliminar</span>
+                    </div>
+                    <div class="shortcut">
+                        <kbd>Ctrl+G</kbd> <span>Generar Pass</span>
+                    </div>
+                    <div class="shortcut">
+                        <kbd>Esc</kbd> <span>Volver</span>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-text right">
+                <h2>Atajos de Teclado</h2>
+                <p>NSLY está diseñado para ser usado completamente desde el teclado. Cero ratón necesario.</p>
+                <p>Cada acción tiene atajos intuitivos. Vi/Vim users van a amar esto.</p>
+                <p><strong>Eficiencia pura: manos en el teclado, mente en tus secretos. 🎯</strong></p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: SOFTWARE LIBRE -->
+        <section class="scroll-section" data-index="5">
+            <div class="scroll-text left">
+                <h2>Código Libre para Todos</h2>
+                <p>NSLY está bajo <strong>GPL v2</strong>. Esto significa:</p>
+                <ul class="freedom-list">
+                    <li>✓ Puedes usarlo libremente</li>
+                    <li>✓ Puedes modificarlo</li>
+                    <li>✓ Puedes distribuirlo</li>
+                    <li>✓ Acceso al código fuente garantizado</li>
+                    <li>✓ Cualquier derivado también es GPL v2</li>
+                </ul>
+                <p><strong>¡Viva el Software Libre! 🚩</strong></p>
+            </div>
+            <div class="scroll-image right">
+                <div class="license-badge">
+                    <h3>GPL v2</h3>
+                    <p>GNU General Public License</p>
+                    <p>Version 2</p>
+                    <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt" target="_blank">Lee la licencia completa →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 6: COMPARATIVA -->
+        <section class="scroll-section" data-index="6">
+            <div class="scroll-image left">
+                <div class="comparison-table">
+                    <table>
+                        <tr class="header">
+                            <th>Feature</th>
+                            <th>NSLY</th>
+                            <th>Bitwarden</th>
+                            <th>KeePass</th>
+                        </tr>
+                        <tr>
+                            <td>TUI Terminal</td>
+                            <td>✅</td>
+                            <td>❌</td>
+                            <td>❌</td>
+                        </tr>
+                        <tr>
+                            <td>Local-first</td>
+                            <td>✅</td>
+                            <td>❌</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>Open Source</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>Precio</td>
+                            <td>🆓</td>
+                            <td>$10/año</td>
+                            <td>🆓</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="scroll-text right">
+                <h2>¿Por qué NSLY?</h2>
+                <p>Si pasas todo el día en la terminal (como todo programador que se respete), NSLY es tu gestor.</p>
+                <p>No hay bloat. No hay interfaz gráfica lenta. Solo binario estático compilado en Go.</p>
+                <p><strong>Eficiencia. Seguridad. Libertad. 🚀</strong></p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 7: INSTALACIÓN -->
+        <section class="scroll-section" data-index="7">
+            <div class="scroll-text left">
+                <h2>Instalación Rápida</h2>
+                <div class="install-box">
+                    <pre><code>git clone https://github.com/Qmaker-programmer/Nsly
+cd Nsly
+go run src/main.go
+
+# O compilar:
+make build
+./bin/nsly</code></pre>
+                </div>
+            </div>
+            <div class="scroll-image right">
+                <div class="install-info">
+                    <h3>Requisitos</h3>
+                    <ul>
+                        <li>Go 1.21+</li>
+                        <li>Terminal POSIX compatible</li>
+                        <li>Linux, macOS o Windows</li>
+                    </ul>
+                    <p style="margin-top: 20px; color: #00ff88;">✨ ¡Eso es todo! ✨</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN FINAL: CTA -->
+        <section class="scroll-section final" data-index="8">
+            <div class="final-content">
+                <h2>¿Listos para Empezar?</h2>
+                <p>Tu seguridad no tiene que ser complicada.</p>
+                <div class="final-buttons">
+                    <a href="https://github.com/Qmaker-programmer/Nsly" class="cta-button large">
+                        📦 Ver el Código en GitHub
+                    </a>
+                    <a href="https://github.com/Qmaker-programmer/Nsly/releases" class="cta-button secondary large">
+                        ⬇️ Descargar Binarios
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>🛡️ NSLY VAULT</h4>
+                <p>Gestor de contraseñas TUI minimalista y seguro</p>
+            </div>
+            <div class="footer-section">
+                <h4>🔗 Enlaces</h4>
+                <a href="https://github.com/Qmaker-programmer/Nsly">GitHub</a>
+                <a href="https://github.com/Qmaker-programmer/Nsly/releases">Descargas</a>
+                <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt">Licencia GPL v2</a>
+            </div>
+            <div class="footer-section">
+                <h4>⚖️ Licencia</h4>
+                <p>GNU General Public License v2</p>
+                <p>Código libre para todos</p>
+            </div>
+        </div>
+        <div class="footer-credit">
+            <p>☕ <strong>Creado por Andresuno (Qmaker)</strong> con <strong>MUCHÍSIMO TÈ</strong> ☕</p>
+            <p style="margin-top: 10px; font-size: 0.9em; color: #888;">Made with ❤️ en la terminal • 2026</p>
+        </div>
+    </footer>
+
+    <!-- SCROLL PROGRESS INDICATOR -->
+    <div class="scroll-progress"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
