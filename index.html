@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🛡️ NSLY VAULT — Gestor de Contraseñas TUI</title>
-    <meta name="description" content="Gestor de contraseñas TUI minimalista y seguro. AES-256-GCM, bcrypt, scrypt. Open Source GPL v2.">
-    <meta property="og:title" content="🛡️ NSLY VAULT — Password Manager TUI">
-    <meta property="og:description" content="Seguridad grado militar, estética hacker, corazón Open Source.">
+    <meta name="description" content="Gestor de contraseñas TUI minimalista y seguro. AES-256-GCM, bcrypt cost=14, scrypt. Open Source GPL v2. Hecho en Go.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
@@ -14,10 +12,9 @@
 </head>
 <body>
 
-    <!-- PARTICLES BACKGROUND -->
     <canvas id="particles-canvas"></canvas>
 
-    <!-- HEADER FLOTANTE -->
+    <!-- HEADER -->
     <header class="header" id="header">
         <div class="header-content">
             <div class="logo">
@@ -25,191 +22,292 @@
                 <p>Password Manager TUI &bull; GPL v2 &bull; Open Source</p>
             </div>
             <nav class="nav-buttons">
-                <a href="https://github.com/Qmaker-programmer/Nsly" target="_blank" class="btn btn-github">
-                    <span>📦 GitHub</span>
-                </a>
-                <a href="https://github.com/Qmaker-programmer/Nsly/releases" target="_blank" class="btn btn-download">
-                    <span>⬇️ Descargar</span>
-                </a>
+                <a href="https://github.com/Qmaker-programmer/Nsly" target="_blank" class="btn btn-github">📦 GitHub</a>
+                <a href="https://github.com/Qmaker-programmer/Nsly/releases" target="_blank" class="btn btn-download">⬇️ Releases</a>
             </nav>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
-            <div class="hero-badge">[ OPEN SOURCE • GPL v2 ]</div>
-            <h1 class="hero-title">🔐 Tu Gestor de<br><span class="gradient-text">Contraseñas</span></h1>
-            <p class="hero-subtitle">Minimalista. Seguro. Que vive en tu <span class="highlight">terminal</span>.</p>
+            <div class="hero-badge">[ OPEN SOURCE &bull; GPL v2 &bull; HECHO EN GO ]</div>
+            <h1 class="hero-title">Tu gestor de contraseñas<br><span class="gradient-text">que vive en tu terminal</span></h1>
+            <p class="hero-subtitle">
+                Minimalista. Seguro. Sin bloat. Sin excusas.<br>
+                <span class="hero-sub-muted">Porque guardar contraseñas en un post-it es 2023, amigo.</span>
+            </p>
+
             <div class="hero-terminal">
                 <div class="terminal-bar">
                     <span class="dot red"></span>
                     <span class="dot yellow"></span>
                     <span class="dot green"></span>
-                    <span class="terminal-title">nsly@vault:~$</span>
+                    <span class="terminal-title">nsly@vault — bash</span>
                 </div>
                 <div class="terminal-body">
-                    <div class="terminal-line"><span class="prompt">$</span> <span class="cmd" id="typewriter"></span><span class="cursor">█</span></div>
+                    <div class="terminal-line">
+                        <span class="prompt">$</span>&nbsp;<span id="typewriter" class="cmd"></span><span class="cursor" id="cursor">█</span>
+                    </div>
                     <div class="terminal-output" id="terminal-output"></div>
                 </div>
             </div>
+
             <div class="hero-buttons">
-                <a href="https://github.com/Qmaker-programmer/Nsly" class="cta-button" target="_blank">Ver en GitHub</a>
-                <a href="https://github.com/Qmaker-programmer/Nsly/releases" class="cta-button secondary" target="_blank">⬇️ Descargar</a>
+                <a href="https://github.com/Qmaker-programmer/Nsly" class="cta-button" target="_blank">📦 Ver en GitHub</a>
+                <a href="https://github.com/Qmaker-programmer/Nsly/releases" class="cta-button secondary" target="_blank">⬇️ Descargar Binario</a>
+            </div>
+
+            <div class="hero-platforms">
+                <span class="platform-badge">🐧 Linux</span>
+                <span class="platform-badge">🍏 macOS</span>
+                <span class="platform-badge">🪟 Windows</span>
+                <span class="platform-badge">ARM64</span>
+                <span class="platform-badge">AMD64</span>
             </div>
         </div>
         <div class="hero-glow"></div>
         <div class="scroll-hint">scroll ↓</div>
     </section>
 
-    <!-- MAIN CONTENT -->
     <main class="scroll-container">
 
-        <!-- SECCIÓN 1: ¿QUÉ ES? -->
+        <!-- 01: INSTALACIÓN -->
         <section class="scroll-section" data-index="1">
             <div class="scroll-text left">
-                <div class="section-label">// 01 — QUÉ ES</div>
-                <h2>¿Qué es NSLY VAULT?</h2>
-                <p>Un gestor de contraseñas TUI (Terminal User Interface) que corre directamente en tu terminal. Sin navegador, sin interfaz gráfica bloatware.</p>
-                <p>Solo eficiencia pura y <strong>seguridad grado militar</strong>.</p>
+                <div class="section-label">// 01 — SETUP</div>
+                <h2>Instalación en<br>3 pasos</h2>
+                <p>Solo necesitas <strong>Go 1.21+</strong> y un terminal que no sea de hace 15 años.</p>
+                <p>O descarga directamente el <strong>binario precompilado</strong> desde Releases. Sin instalar Go. Sin drama.</p>
+                <div class="install-methods">
+                    <div class="method-badge active">📦 Source (Go)</div>
+                    <div class="method-badge">⬇️ Binario</div>
+                    <div class="method-badge">🛠️ Makefile</div>
+                </div>
             </div>
             <div class="scroll-image right">
                 <div class="code-block">
                     <div class="code-header">
-                        <span class="code-dot"></span>
-                        <span class="code-dot"></span>
-                        <span class="code-dot"></span>
-                        <span style="margin-left:8px; color:#888; font-size:0.8rem;">terminal</span>
+                        <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
+                        <span class="code-lang">bash</span>
                     </div>
-                    <pre><code><span class="c-prompt">$</span> <span class="c-cmd">go run src/main.go</span>
+                    <pre><code><span class="c-comment"># 1️⃣  Clona el repo</span>
+<span class="c-cmd">git clone https://github.com/Qmaker-programmer/Nsly.git</span>
+<span class="c-cmd">cd Nsly</span>
 
-<span class="c-green">🛡️ NSLY VAULT — ÁREA RESTRINGIDA</span>
+<span class="c-comment"># 2️⃣  Descarga dependencias</span>
+<span class="c-cmd">go mod tidy</span>
 
-<span class="c-gray">Contraseña maestra:</span>
-<span class="c-purple">●●●●●●●●</span>
+<span class="c-comment"># 3️⃣  ¡Ejecuta!</span>
+<span class="c-cmd">go run src/main.go</span>
 
-<span class="c-muted">enter entrar • esc salir</span></code></pre>
+<span class="c-comment"># O compila el binario estático:</span>
+<span class="c-success">make build</span>
+<span class="c-success">./bin/nsly</span></code></pre>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN 2: SEGURIDAD -->
+        <!-- 02: SEGURIDAD -->
         <section class="scroll-section" data-index="2">
             <div class="scroll-image left">
                 <div class="security-card">
                     <div class="security-layer">
                         <div class="sec-icon">🔐</div>
-                        <div>
+                        <div class="sec-info">
                             <h3>bcrypt cost=14</h3>
-                            <p>Verificación de contraseña maestra</p>
+                            <p>Verificación master password (~1s intencional)</p>
                         </div>
-                        <div class="sec-badge">LAYER 1</div>
+                        <div class="sec-badge">AUTH</div>
                     </div>
                     <div class="security-connector"></div>
                     <div class="security-layer">
                         <div class="sec-icon">🔒</div>
-                        <div>
+                        <div class="sec-info">
                             <h3>AES-256-GCM</h3>
-                            <p>Cifrado de tus contraseñas</p>
+                            <p>Cifrado de cada contraseña guardada</p>
                         </div>
-                        <div class="sec-badge">LAYER 2</div>
+                        <div class="sec-badge">CIFRADO</div>
                     </div>
                     <div class="security-connector"></div>
                     <div class="security-layer">
                         <div class="sec-icon">🛡️</div>
-                        <div>
+                        <div class="sec-info">
                             <h3>scrypt N=32768</h3>
-                            <p>Derivación anti-brute-force</p>
+                            <p>Derivación de clave anti-brute-force</p>
                         </div>
-                        <div class="sec-badge">LAYER 3</div>
+                        <div class="sec-badge">KDF</div>
+                    </div>
+                    <div class="security-connector"></div>
+                    <div class="security-layer">
+                        <div class="sec-icon">🔏</div>
+                        <div class="sec-info">
+                            <h3>Permisos 0600</h3>
+                            <p>Solo TÚ lees <code>~/.nsly_vault/</code></p>
+                        </div>
+                        <div class="sec-badge">FS</div>
                     </div>
                 </div>
             </div>
             <div class="scroll-text right">
                 <div class="section-label">// 02 — SEGURIDAD</div>
-                <h2>Seguridad de Nivel Militar</h2>
-                <p>Tu bóveda está protegida por las tecnologías criptográficas más avanzadas. Cada contraseña se cifra con AES-256-GCM.</p>
-                <p>La contraseña maestra se verifica con bcrypt cost=14 — tarda ~1 segundo <em>intencionalmente</em>.</p>
-                <p class="highlight-box">💡 Incluso si hackean tu servidor, solo obtienen <strong>basura cifrada</strong>. 🎯</p>
-            </div>
-        </section>
-
-        <!-- SECCIÓN 3: CARACTERÍSTICAS -->
-        <section class="scroll-section" data-index="3">
-            <div class="scroll-text left">
-                <div class="section-label">// 03 — FEATURES</div>
-                <h2>Características Increíbles</h2>
-                <ul class="features-list">
-                    <li><span class="check">✓</span> Generador de contraseñas seguras</li>
-                    <li><span class="check">✓</span> Búsqueda en tiempo real</li>
-                    <li><span class="check">✓</span> TOTP / 2FA integrado</li>
-                    <li><span class="check">✓</span> Sincronización en la nube (cifrada)</li>
-                    <li><span class="check">✓</span> Importar de Bitwarden, KeePass</li>
-                    <li><span class="check">✓</span> Exportar / Importar</li>
-                    <li><span class="check">✓</span> CLI puro — Sin dependencias bloat</li>
-                </ul>
-            </div>
-            <div class="scroll-image right">
-                <div class="features-visual">
-                    <div class="feature-box">🎲<br><small>Generador</small></div>
-                    <div class="feature-box">🔍<br><small>Búsqueda</small></div>
-                    <div class="feature-box">🔑<br><small>2FA/TOTP</small></div>
-                    <div class="feature-box">☁️<br><small>Cloud Sync</small></div>
-                    <div class="feature-box">📤<br><small>Exportar</small></div>
-                    <div class="feature-box">📥<br><small>Importar</small></div>
+                <h2>4 capas de<br>protección real</h2>
+                <p>La master password <strong>nunca se guarda en claro</strong>. Solo su hash bcrypt cost=14 — tarda ~1 segundo intencionalmente para frenar ataques de fuerza bruta.</p>
+                <div class="highlight-box">
+                    💡 Si hackean tu servidor solo obtienen:<br>
+                    <code>[BLOB OPACO INCOMPRENSIBLE]</code><br>
+                    <span style="font-size:0.8rem; color:var(--text-muted)">Para humanos y máquinas. 🎯</span>
+                </div>
+                <div class="vault-files">
+                    <div class="vault-file"><span class="file-icon">📄</span><code>master.hash</code><span class="file-desc">Hash bcrypt (nunca en claro)</span></div>
+                    <div class="vault-file"><span class="file-icon">🔒</span><code>vault.enc</code><span class="file-desc">Blob cifrado AES-256-GCM</span></div>
+                    <div class="vault-file"><span class="file-icon">🧂</span><code>vault.meta</code><span class="file-desc">Salt para scrypt</span></div>
+                    <div class="vault-file"><span class="file-icon">☁️</span><code>sync.json</code><span class="file-desc">Config sync (sin datos sensibles)</span></div>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN 4: ATAJOS DE TECLADO -->
+        <!-- 03: FEATURES -->
+        <section class="scroll-section" data-index="3">
+            <div class="scroll-text left">
+                <div class="section-label">// 03 — FEATURES</div>
+                <h2>Todo lo que<br>ya funciona</h2>
+                <ul class="features-list">
+                    <li><span class="check">✓</span><div><strong>Cifrado AES-256-GCM</strong> — Blindaje real, no marketing</div></li>
+                    <li><span class="check">✓</span><div><strong>Generador de contraseñas</strong> — Random de verdad, no ChatGPT</div></li>
+                    <li><span class="check">✓</span><div><strong>Búsqueda en tiempo real</strong> — Filtra por servicio, usuario, URL</div></li>
+                    <li><span class="check">✓</span><div><strong>TOTP / 2FA integrado</strong> — Códigos Google, GitHub, etc.</div></li>
+                    <li><span class="check">✓</span><div><strong>Sync en la nube (cifrada)</strong> — Tu servidor, tus reglas</div></li>
+                    <li><span class="check">✓</span><div><strong>Importar Bitwarden / KeePass</strong> — Migra sin dolor</div></li>
+                    <li><span class="check">✓</span><div><strong>Medidor de fortaleza</strong> — Te dice si tu pass es patética</div></li>
+                    <li><span class="check">✓</span><div><strong>Exportar JSON</strong> — Backup total de tu bóveda</div></li>
+                </ul>
+            </div>
+            <div class="scroll-image right">
+                <div class="roadmap-card">
+                    <div class="roadmap-title">🚀 En el roadmap</div>
+                    <div class="roadmap-item">⏳ Múltiples identidades</div>
+                    <div class="roadmap-item">⏳ Historial de cambios</div>
+                    <div class="roadmap-item">⏳ Autolock temporal (5 min)</div>
+                    <div class="roadmap-item">⏳ WebDAV / Nextcloud</div>
+                    <div class="roadmap-item">⏳ Biometría (huella dactilar)</div>
+                    <div class="roadmap-item">⏳ Compartir contraseñas E2E</div>
+                    <div class="roadmap-separator"></div>
+                    <div class="deps-title">📦 Dependencias</div>
+                    <div class="dep-item"><span class="dep-name">charmbracelet/bubbletea</span><span class="dep-ver">v0.25.0</span></div>
+                    <div class="dep-item"><span class="dep-name">charmbracelet/bubbles</span><span class="dep-ver">v0.18.0</span></div>
+                    <div class="dep-item"><span class="dep-name">charmbracelet/lipgloss</span><span class="dep-ver">v0.10.0</span></div>
+                    <div class="dep-item"><span class="dep-name">pquerna/otp</span><span class="dep-ver">v1.4.0</span></div>
+                    <div class="dep-item"><span class="dep-name">golang.org/x/crypto</span><span class="dep-ver">v0.18.0</span></div>
+                    <div class="dep-item"><span class="dep-name">atotto/clipboard</span><span class="dep-ver">v0.1.4</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 04: ATAJOS -->
         <section class="scroll-section" data-index="4">
             <div class="scroll-image left">
-                <div class="keyboard-shortcuts">
-                    <div class="shortcut"><kbd>↑ / ↓</kbd><span>Navegar</span></div>
-                    <div class="shortcut"><kbd>Enter</kbd><span>Seleccionar</span></div>
-                    <div class="shortcut"><kbd>C</kbd><span>Copiar</span></div>
-                    <div class="shortcut"><kbd>D</kbd><span>Eliminar</span></div>
-                    <div class="shortcut"><kbd>Ctrl+G</kbd><span>Generar Pass</span></div>
-                    <div class="shortcut"><kbd>Esc</kbd><span>Volver</span></div>
+                <div class="kbd-container">
+                    <div class="kbd-group">
+                        <div class="kbd-group-title">📋 Lista de contraseñas</div>
+                        <div class="shortcut"><kbd>↑ / ↓ k / j</kbd><span>Navegar (Vim-style 😎)</span></div>
+                        <div class="shortcut"><kbd>Enter</kbd><span>Ver detalle completo</span></div>
+                        <div class="shortcut"><kbd>C</kbd><span>Copiar al clipboard</span></div>
+                        <div class="shortcut"><kbd>D</kbd><span>Eliminar (con confirmación)</span></div>
+                    </div>
+                    <div class="kbd-group">
+                        <div class="kbd-group-title">🔎 Detalle / Generador</div>
+                        <div class="shortcut"><kbd>S</kbd><span>Mostrar / ocultar contraseña</span></div>
+                        <div class="shortcut"><kbd>T</kbd><span>Copiar código TOTP 2FA</span></div>
+                        <div class="shortcut"><kbd>Ctrl+G</kbd><span>Generar contraseña</span></div>
+                        <div class="shortcut"><kbd>Esc</kbd><span>Volver / Bloquear bóveda</span></div>
+                    </div>
                 </div>
             </div>
             <div class="scroll-text right">
                 <div class="section-label">// 04 — ATAJOS</div>
-                <h2>Atajos de Teclado</h2>
-                <p>NSLY está diseñado para ser usado completamente desde el teclado. <strong>Cero ratón necesario.</strong></p>
-                <p>Vi/Vim users van a amar esto. ❤️</p>
-                <p class="highlight-box">⚡ Manos en el teclado, mente en tus secretos.</p>
+                <h2>Cero ratón.<br>100% teclado.</h2>
+                <p>Diseñado para vivir en la terminal. Si usas Vim, ya sabes cómo navegar.</p>
+                <p>En el generador: <kbd class="inline-kbd">←/→</kbd> cambia longitud, <kbd class="inline-kbd">Space</kbd> activa/desactiva charsets, <kbd class="inline-kbd">C</kbd> copia.</p>
+                <div class="highlight-box">
+                    ⚡ Manos en el teclado, mente en tus secretos.<br>
+                    <span style="font-size:0.82rem; color:var(--text-muted)">Los Vi/Vim users van a amar esto.</span>
+                </div>
             </div>
         </section>
 
-        <!-- SECCIÓN 5: SOFTWARE LIBRE -->
+        <!-- 05: MULTIPLATAFORMA -->
         <section class="scroll-section" data-index="5">
             <div class="scroll-text left">
-                <div class="section-label">// 05 — LICENCIA</div>
-                <h2>Código Libre para Todos</h2>
-                <p>NSLY está bajo <strong>GPL v2</strong>. Esto significa:</p>
-                <ul class="freedom-list">
-                    <li>✓ Puedes usarlo libremente</li>
-                    <li>✓ Puedes modificarlo</li>
-                    <li>✓ Puedes distribuirlo</li>
-                    <li>✓ Acceso al código fuente garantizado</li>
-                    <li>✓ Cualquier derivado también es GPL v2</li>
-                </ul>
-                <p><strong>¡Viva el Software Libre! 🚩</strong></p>
+                <div class="section-label">// 05 — MULTIPLATAFORMA</div>
+                <h2>6 binarios.<br>Un comando.</h2>
+                <p>El Makefile incluido compila para <strong>6 plataformas</strong> con <code>make build-all</code>. Binarios estáticos con <code>-ldflags="-s -w"</code>, sin dependencias externas.</p>
+                <div class="platforms-grid">
+                    <div class="platform-card">🐧<br><small>Linux amd64</small></div>
+                    <div class="platform-card">🐧<br><small>Linux arm64</small></div>
+                    <div class="platform-card">🪟<br><small>Win amd64</small></div>
+                    <div class="platform-card">🪟<br><small>Win arm64</small></div>
+                    <div class="platform-card">🍏<br><small>macOS Intel</small></div>
+                    <div class="platform-card">🍏<br><small>macOS M-series</small></div>
+                </div>
             </div>
             <div class="scroll-image right">
+                <div class="code-block">
+                    <div class="code-header">
+                        <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
+                        <span class="code-lang">Makefile</span>
+                    </div>
+                    <pre><code><span class="c-comment"># Compila los 6 binarios de una:</span>
+<span class="c-success">make build-all</span>
+
+<span class="c-comment"># Output en /bin/:</span>
+<span class="c-green">✓ nsly-linux-amd64</span>
+<span class="c-green">✓ nsly-linux-arm64</span>
+<span class="c-green">✓ nsly-windows-amd64.exe</span>
+<span class="c-green">✓ nsly-windows-arm64.exe</span>
+<span class="c-green">✓ nsly-darwin-amd64</span>
+<span class="c-green">✓ nsly-darwin-arm64</span>
+
+<span class="c-cmd">make run    </span><span class="c-muted"># go run src/main.go</span>
+<span class="c-cmd">make build  </span><span class="c-muted"># binario local</span>
+<span class="c-cmd">make clean  </span><span class="c-muted"># rm -rf bin/</span></code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- 06: LICENCIA Y CONTRIBUCIONES -->
+        <section class="scroll-section" data-index="6">
+            <div class="scroll-image left">
                 <div class="license-badge">
                     <div class="license-icon">⚖️</div>
                     <h3>GPL v2</h3>
                     <p>GNU General Public License</p>
                     <p>Version 2</p>
-                    <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt" target="_blank">Lee la licencia completa →</a>
+                    <div class="license-rights">
+                        <div class="lr-item">✅ Usar libremente</div>
+                        <div class="lr-item">✅ Modificar y auditar</div>
+                        <div class="lr-item">✅ Distribuir</div>
+                        <div class="lr-item">✅ Derivados también GPL v2</div>
+                    </div>
+                    <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt" target="_blank">Lee la licencia →</a>
                 </div>
+            </div>
+            <div class="scroll-text right">
+                <div class="section-label">// 06 — LICENCIA</div>
+                <h2>Open Source.<br>Sin trampa.</h2>
+                <p>El código está ahí para que lo leas, audites y mejores. ¿Encontraste un bug? ¿Quieres una feature?</p>
+                <div class="contribute-box">
+                    <div class="contrib-step"><span class="contrib-n">1</span>Fork el repo en GitHub</div>
+                    <div class="contrib-step"><span class="contrib-n">2</span><code>git checkout -b feature/mi-feature</code></div>
+                    <div class="contrib-step"><span class="contrib-n">3</span>Haz tu magia ✨</div>
+                    <div class="contrib-step"><span class="contrib-n">4</span>Abre un Pull Request 🎉</div>
+                </div>
+                <p style="margin-top:1.5rem"><strong>¡Viva el Software Libre! 🚩</strong></p>
             </div>
         </section>
 
-        <!-- SECCIÓN 6: COMPARATIVA -->
-        <section class="scroll-section" data-index="6">
+        <!-- 07: COMPARATIVA -->
+        <section class="scroll-section" data-index="7">
             <div class="scroll-image left">
                 <div class="comparison-table">
                     <table>
@@ -219,12 +317,14 @@
                                 <th class="nsly-col">NSLY</th>
                                 <th>Bitwarden</th>
                                 <th>KeePass</th>
+                                <th>1Password</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>TUI Terminal</td>
-                                <td class="nsly-col">✅</td>
+                                <td class="nsly-col">✅ 🎉</td>
+                                <td>❌</td>
                                 <td>❌</td>
                                 <td>❌</td>
                             </tr>
@@ -233,111 +333,103 @@
                                 <td class="nsly-col">✅</td>
                                 <td>❌</td>
                                 <td>✅</td>
+                                <td>❌</td>
+                            </tr>
+                            <tr>
+                                <td>Sync cifrada</td>
+                                <td class="nsly-col">✅ DIY</td>
+                                <td>✅ cloud</td>
+                                <td>❌</td>
+                                <td>✅ cloud</td>
+                            </tr>
+                            <tr>
+                                <td>TOTP / 2FA</td>
+                                <td class="nsly-col">✅</td>
+                                <td>✅</td>
+                                <td>✅</td>
+                                <td>✅</td>
                             </tr>
                             <tr>
                                 <td>Open Source</td>
                                 <td class="nsly-col">✅</td>
                                 <td>✅</td>
                                 <td>✅</td>
+                                <td>❌</td>
                             </tr>
                             <tr>
                                 <td>Precio</td>
                                 <td class="nsly-col">🆓 Free</td>
                                 <td>$10/año</td>
                                 <td>🆓 Free</td>
+                                <td>$3.99/mes</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
             <div class="scroll-text right">
-                <div class="section-label">// 06 — POR QUÉ NSLY</div>
+                <div class="section-label">// 07 — POR QUÉ NSLY</div>
                 <h2>¿Por qué NSLY?</h2>
-                <p>Si pasas todo el día en la terminal (como todo programador que se respete), NSLY es tu gestor.</p>
-                <p>No hay bloat. No hay interfaz gráfica lenta. Solo <strong>binario estático compilado en Go.</strong></p>
-                <p class="highlight-box">🚀 Eficiencia. Seguridad. Libertad.</p>
+                <p>Si pasas todo el día en la terminal, NSLY es tu gestor. Sin Electron. Sin GUI lenta. Sin telemetría.</p>
+                <p>Solo un <strong>binario estático compilado en Go</strong> que pesa menos que una foto de tu gato 🐱</p>
+                <div class="highlight-box">🚀 Eficiencia. Seguridad. Libertad.</div>
             </div>
         </section>
 
-        <!-- SECCIÓN 7: INSTALACIÓN -->
-        <section class="scroll-section" data-index="7">
-            <div class="scroll-text left">
-                <div class="section-label">// 07 — INSTALACIÓN</div>
-                <h2>Instalación Rápida</h2>
-                <div class="install-box">
-                    <div class="install-header">
-                        <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
-                    </div>
-                    <pre><code><span class="c-gray"># Clonar el repositorio</span>
-<span class="c-cmd">git clone https://github.com/Qmaker-programmer/Nsly</span>
-<span class="c-cmd">cd Nsly</span>
-<span class="c-cmd">go run src/main.go</span>
-
-<span class="c-gray"># O compilar el binario:</span>
-<span class="c-cmd">make build</span>
-<span class="c-cmd">./bin/nsly</span></code></pre>
-                </div>
-            </div>
-            <div class="scroll-image right">
-                <div class="install-info">
-                    <h3>📋 Requisitos</h3>
-                    <ul>
-                        <li>🐹 Go 1.21+</li>
-                        <li>💻 Terminal POSIX compatible</li>
-                        <li>🐧 Linux, macOS o Windows</li>
-                    </ul>
-                    <p class="success-text">✨ ¡Eso es todo! ✨</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECCIÓN FINAL: CTA -->
+        <!-- CTA FINAL -->
         <section class="scroll-section final" data-index="8">
             <div class="final-content">
-                <div class="section-label" style="justify-content:center;">// FIN</div>
-                <h2>¿Listos para Empezar?</h2>
-                <p>Tu seguridad no tiene que ser complicada.</p>
+                <div class="section-label" style="justify-content:center">// FIN — ¡A CORRER!</div>
+                <h2>¿Listo para empezar?</h2>
+                <p>Tu seguridad no tiene que ser complicada ni cara.</p>
+                <div class="final-code">
+                    <div class="code-header">
+                        <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
+                        <span class="code-lang">bash</span>
+                    </div>
+                    <pre><code><span class="c-cmd">git clone https://github.com/Qmaker-programmer/Nsly.git</span>
+<span class="c-cmd">cd Nsly &amp;&amp; go run src/main.go</span>
+<span class="c-comment"># Crea tu contraseña maestra 🔐</span>
+<span class="c-comment"># Guarda tus secretos sin miedo 🛡️</span>
+<span class="c-comment"># Duerme tranquilo 😴</span></code></pre>
+                </div>
                 <div class="final-buttons">
-                    <a href="https://github.com/Qmaker-programmer/Nsly" class="cta-button large" target="_blank">
-                        📦 Ver el Código en GitHub
-                    </a>
-                    <a href="https://github.com/Qmaker-programmer/Nsly/releases" class="cta-button secondary large" target="_blank">
-                        ⬇️ Descargar Binarios
-                    </a>
+                    <a href="https://github.com/Qmaker-programmer/Nsly" class="cta-button large" target="_blank">📦 Ver Código en GitHub</a>
+                    <a href="https://github.com/Qmaker-programmer/Nsly/releases" class="cta-button secondary large" target="_blank">⬇️ Descargar Binario</a>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
                 <h4>🛡️ NSLY VAULT</h4>
-                <p>Gestor de contraseñas TUI minimalista y seguro</p>
+                <p>Gestor de contraseñas TUI minimalista y seguro.</p>
+                <p>Stack: <strong>Go + bubbletea + AES-256-GCM</strong></p>
             </div>
             <div class="footer-section">
-                <h4>🔗 Enlaces</h4>
-                <a href="https://github.com/Qmaker-programmer/Nsly" target="_blank">GitHub</a>
-                <a href="https://github.com/Qmaker-programmer/Nsly/releases" target="_blank">Descargas</a>
+                <h4>🔗 Links</h4>
+                <a href="https://github.com/Qmaker-programmer/Nsly" target="_blank">GitHub (Nsly — app)</a>
+                <a href="https://github.com/Qmaker-programmer/Nslypage" target="_blank">GitHub (Nslypage — landing)</a>
+                <a href="https://github.com/Qmaker-programmer/Nsly/releases" target="_blank">Releases &amp; Binarios</a>
                 <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt" target="_blank">Licencia GPL v2</a>
             </div>
             <div class="footer-section">
-                <h4>⚖️ Licencia</h4>
-                <p>GNU General Public License v2</p>
-                <p>Código libre para todos 🚩</p>
+                <h4>🛠️ Estructura</h4>
+                <p><code>src/main.go</code> — Todo el código</p>
+                <p><code>bin/</code> — Binarios compilados</p>
+                <p><code>Makefile</code> — Build system</p>
             </div>
         </div>
         <div class="footer-credit">
             <p>☕ <strong>Creado por Andresuno (Qmaker)</strong> con <strong>MUCHÍSIMO TÈ</strong> ☕</p>
-            <p style="margin-top:10px; font-size:0.85em; color:#666;">Made with ❤️ en la terminal &bull; 2026</p>
+            <p style="margin-top:8px; font-size:0.82em; color:#555">Made with :) en la terminal &bull; 2026 &bull; GPL v2</p>
         </div>
     </footer>
 
-    <!-- SCROLL PROGRESS INDICATOR -->
     <div class="scroll-progress" id="scroll-progress"></div>
-
     <script src="scripts.js"></script>
 </body>
 </html>
