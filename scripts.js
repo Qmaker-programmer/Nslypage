@@ -325,16 +325,28 @@
 })();
 
 // ──────────────────────────────────────────────────────────────────
-// 9. METHOD BADGES — TOGGLE ACTIVE
+// 9. METHOD BADGES — TOGGLE ACTIVE & HOVER
 // ──────────────────────────────────────────────────────────────────
 (function initMethodBadges() {
   const badges = document.querySelectorAll(".method-badge");
   if (!badges.length) return;
 
   badges.forEach((badge) => {
+    // 1. Comportamiento al hacer CLIC
     badge.addEventListener("click", () => {
+      // Quitamos e.preventDefault() para que el enlace SÍ funcione
       badges.forEach((b) => b.classList.remove("active"));
       badge.classList.add("active");
+    });
+
+    // 2. Al pasar el mouse por encima (Hover)
+    badge.addEventListener("mouseenter", () => {
+      badge.classList.add("hovered");
+    });
+
+    // 3. Al quitar el mouse de encima
+    badge.addEventListener("mouseleave", () => {
+      badge.classList.remove("hovered");
     });
   });
 })();

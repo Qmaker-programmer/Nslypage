@@ -631,20 +631,38 @@ body {
     margin-top: 1.5rem;
 }
 
+/* Estado base para todos los enlaces/botones */
 .method-badge {
+    display: inline-block;
+    text-decoration: none;
     padding: 0.3rem 0.8rem;
     border: 1px solid var(--glass-border);
     border-radius: 3px;
     font-size: 0.75rem;
     color: var(--text-muted);
-    cursor: default;
-    transition: all 0.2s;
+    cursor: pointer; /* Cambiado a pointer para que se vea la mano del mouse siempre */
+    transition: all 0.2s ease-in-out;
 }
 
+/* Estado HOVER (Controlado por el nuevo JavaScript) */
+.method-badge.hovered {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Estado ACTIVO fijo (Cuando se hace clic) */
 .method-badge.active {
     border-color: var(--primary-light);
     color: var(--primary-light);
     background: rgba(0, 255, 170, 0.06);
+}
+
+/* Si el botón ya está activo y además tiene el mouse encima, 
+   le damos un extra de brillo verde */
+.method-badge.active.hovered {
+    background: rgba(0, 255, 170, 0.15);
+    box-shadow: 0 0 8px rgba(0, 255, 170, 0.3);
 }
 
 /* ═══ SECURITY CARD ══════════════════════════════════════════════ */

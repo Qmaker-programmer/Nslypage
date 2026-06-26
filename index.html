@@ -79,11 +79,11 @@
                 <div class="section-label">// 01 — SETUP</div>
                 <h2>Instalación en<br>3 pasos</h2>
                 <p>Solo necesitas <strong>Go 1.21+</strong> y un terminal que no sea de hace 15 años.</p>
-                <p>O descarga directamente el <strong>binario precompilado</strong> desde Releases. Sin instalar Go. Sin drama.</p>
+                <p>O descarga directamente el <strong>binario precompilado</strong> desde Releases. Sin instalar Go.</p>
                 <div class="install-methods">
-                    <div class="method-badge active">📦 Source (Go)</div>
-                    <div class="method-badge">⬇️ Binario</div>
-                    <div class="method-badge">🛠️ Makefile</div>
+                    <a href="https://github.com/Qmaker-programmer/nsly" class="method-badge active" target="_blank" rel="noopener noreferrer">📦 Source (Go)</a>
+                    <a href="https://github.com/Qmaker-programmer/nsly/releases" class="method-badge" target="_blank" rel="noopener noreferrer">⬇️ Binario</a>
+                    <a href="https://github.com/Qmaker-programmer/nsly/blob/main/Makefile" class="method-badge" target="_blank" rel="noopener noreferrer">🛠️ Makefile</a>
                 </div>
             </div>
             <div class="scroll-image right">
@@ -179,7 +179,7 @@
                     <li><span class="check">✓</span><div><strong>Búsqueda en tiempo real</strong> — Filtra por servicio, usuario, URL</div></li>
                     <li><span class="check">✓</span><div><strong>TOTP / 2FA integrado</strong> — Códigos Google, GitHub, etc.</div></li>
                     <li><span class="check">✓</span><div><strong>Sync en la nube (cifrada)</strong> — Tu servidor, tus reglas</div></li>
-                    <li><span class="check">✓</span><div><strong>Importar Bitwarden / KeePass</strong> — Migra sin dolor</div></li>
+                    <li><span class="check">✓</span><div><strong>Importar Bitwarden / KeePass</strong> — Migra sin dificultad</div></li>
                     <li><span class="check">✓</span><div><strong>Medidor de fortaleza</strong> — Te dice si tu pass es patética</div></li>
                     <li><span class="check">✓</span><div><strong>Exportar JSON</strong> — Backup total de tu bóveda</div></li>
                 </ul>
@@ -211,7 +211,7 @@
                 <div class="kbd-container">
                     <div class="kbd-group">
                         <div class="kbd-group-title">📋 Lista de contraseñas</div>
-                        <div class="shortcut"><kbd>↑ / ↓ k / j</kbd><span>Navegar (Vim-style 😎)</span></div>
+                        <div class="shortcut"><kbd>↑ / ↓ k / j</kbd><span>Navegar</span></div>
                         <div class="shortcut"><kbd>Enter</kbd><span>Ver detalle completo</span></div>
                         <div class="shortcut"><kbd>C</kbd><span>Copiar al clipboard</span></div>
                         <div class="shortcut"><kbd>D</kbd><span>Eliminar (con confirmación)</span></div>
@@ -228,12 +228,7 @@
             <div class="scroll-text right">
                 <div class="section-label">// 04 — ATAJOS</div>
                 <h2>Cero ratón.<br>100% teclado.</h2>
-                <p>Diseñado para vivir en la terminal. Si usas Vim, ya sabes cómo navegar.</p>
                 <p>En el generador: <kbd class="inline-kbd">←/→</kbd> cambia longitud, <kbd class="inline-kbd">Space</kbd> activa/desactiva charsets, <kbd class="inline-kbd">C</kbd> copia.</p>
-                <div class="highlight-box">
-                    ⚡ Manos en el teclado, mente en tus secretos.<br>
-                    <span style="font-size:0.82rem; color:var(--text-muted)">Los Vi/Vim users van a amar esto.</span>
-                </div>
             </div>
         </section>
 
@@ -300,7 +295,7 @@
                 <div class="contribute-box">
                     <div class="contrib-step"><span class="contrib-n">1</span>Fork el repo en GitHub</div>
                     <div class="contrib-step"><span class="contrib-n">2</span><code>git checkout -b feature/mi-feature</code></div>
-                    <div class="contrib-step"><span class="contrib-n">3</span>Haz tu magia ✨</div>
+                    <div class="contrib-step"><span class="contrib-n">3</span>Haz tu feature ✨</div>
                     <div class="contrib-step"><span class="contrib-n">4</span>Abre un Pull Request 🎉</div>
                 </div>
                 <p style="margin-top:1.5rem"><strong>¡Viva el Software Libre! 🚩</strong></p>
@@ -372,7 +367,7 @@
                 <div class="section-label">// 07 — POR QUÉ NSLY</div>
                 <h2>¿Por qué NSLY?</h2>
                 <p>Si pasas todo el día en la terminal, NSLY es tu gestor. Sin Electron. Sin GUI lenta. Sin telemetría.</p>
-                <p>Solo un <strong>binario estático compilado en Go</strong> que pesa menos que una foto de tu gato 🐱</p>
+                <p>Solo un <strong>binario estático compilado en Go</strong> que pesa menos que una foto.</p>
                 <div class="highlight-box">🚀 Eficiencia. Seguridad. Libertad.</div>
             </div>
         </section>
@@ -382,7 +377,6 @@
             <div class="final-content">
                 <div class="section-label" style="justify-content:center">// FIN — ¡A CORRER!</div>
                 <h2>¿Listo para empezar?</h2>
-                <p>Tu seguridad no tiene que ser complicada ni cara.</p>
                 <div class="final-code">
                     <div class="code-header">
                         <span class="code-dot"></span><span class="code-dot"></span><span class="code-dot"></span>
@@ -391,7 +385,7 @@
                     <pre><code><span class="c-cmd">git clone https://github.com/Qmaker-programmer/Nsly.git</span>
 <span class="c-cmd">cd Nsly &amp;&amp; go run src/main.go</span>
 <span class="c-comment"># Crea tu contraseña maestra 🔐</span>
-<span class="c-comment"># Guarda tus secretos sin miedo 🛡️</span>
+<span class="c-comment"># Guarda tus contraseña 🛡️</span>
 <span class="c-comment"># Duerme tranquilo 😴</span></code></pre>
                 </div>
                 <div class="final-buttons">
